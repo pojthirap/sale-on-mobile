@@ -1,0 +1,11 @@
+{
+  "name": "ptgsaleonmobile",
+  "displayName": "ptgsaleonmobile",
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "3a230229-9605-4d0e-8d0a-b643ebaa0537"
+      }
+    }
+  }
+}

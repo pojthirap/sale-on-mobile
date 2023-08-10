@@ -1,0 +1,829 @@
+2023-07-07 17:17:33.7293 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-07 17:17:33.7293 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-07 17:17:33.7745 Info NLog.Extensions.AzureBlobStorage, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null. File version: 3.0.0.0. Product version: 3.0.0+0f310734bbf0a754081db5fe3978a39d04fceecf. GlobalAssemblyCache: False
+2023-07-07 17:17:33.8109 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll succeeded!
+2023-07-07 17:17:33.8109 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-07 17:17:33.8109 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-07 17:17:33.8296 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.4.1610. Product version: 1.7.4+e2bffa9e949fb4760d75aca224e78631c063f087. GlobalAssemblyCache: False
+2023-07-07 17:17:33.8817 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll succeeded!
+2023-07-07 17:17:33.8880 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-07 17:17:33.8880 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-07 17:17:33.9029 Info NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.14.0.2042. Product version: 4.14.0+18bbcdbd5bd13b4565c32d72e09502b7ca6c71d4. GlobalAssemblyCache: False
+2023-07-07 17:17:33.9029 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll succeeded!
+2023-07-07 17:17:33.9187 Info Message Template Auto Format enabled
+2023-07-07 17:17:33.9187 Info Loading assembly: NLog.Extensions.AzureBlobStorage
+2023-07-07 17:17:33.9358 Info Loading assembly: NLog.Web.AspNetCore
+2023-07-07 17:17:33.9747 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value 'DateAndSequence' for property 'archiveNumbering' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveNumbering not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-07 17:17:34.1016 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value '20000000' for property 'archiveAboveSize' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveAboveSize not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-07 17:17:34.1257 Info Adding target BlobStorageTarget(Name=azure)
+2023-07-07 17:17:34.1384 Info Adding target FileTarget(Name=allfile)
+2023-07-07 17:17:34.1682 Info Adding target FileTarget(Name=ownFile-web)
+2023-07-07 17:17:34.1682 Warn Skipping unrecognized property 'tolower=true` for ${level} (NLog.LayoutRenderers.LevelLayoutRenderer)
+2023-07-07 17:17:34.1682 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2023-07-07 17:17:34.1868 Info Adding target TraceTarget(Name=trace)
+2023-07-07 17:17:34.2277 Info Validating config: Targets=5, ConfigItems=104, FilePath=D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.config
+2023-07-07 17:17:34.2614 Error AzureBlobStorageTarget(Name=azure): Failed to create BlobClient with connectionString=. Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+2023-07-07 17:17:34.2614 Error AzureBlobStorage Target[azure]: Error initializing target Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)
+2023-07-07 17:17:34.2813 Info Configuration initialized.
+2023-07-07 17:17:34.2813 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2023-07-07 17:17:34.4447 Info AppDomain Shutting down. Logger closing...
+2023-07-07 17:17:34.4694 Info Logger has been shut down.
+2023-07-07 17:20:30.1746 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-07 17:20:30.1835 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-07 17:20:30.2011 Info NLog.Extensions.AzureBlobStorage, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null. File version: 3.0.0.0. Product version: 3.0.0+0f310734bbf0a754081db5fe3978a39d04fceecf. GlobalAssemblyCache: False
+2023-07-07 17:20:30.2196 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll succeeded!
+2023-07-07 17:20:30.2196 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-07 17:20:30.2325 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-07 17:20:30.2325 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.4.1610. Product version: 1.7.4+e2bffa9e949fb4760d75aca224e78631c063f087. GlobalAssemblyCache: False
+2023-07-07 17:20:30.2535 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll succeeded!
+2023-07-07 17:20:30.2604 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-07 17:20:30.2604 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-07 17:20:30.2768 Info NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.14.0.2042. Product version: 4.14.0+18bbcdbd5bd13b4565c32d72e09502b7ca6c71d4. GlobalAssemblyCache: False
+2023-07-07 17:20:30.2768 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll succeeded!
+2023-07-07 17:20:30.2964 Info Message Template Auto Format enabled
+2023-07-07 17:20:30.3070 Info Loading assembly: NLog.Extensions.AzureBlobStorage
+2023-07-07 17:20:30.3070 Info Loading assembly: NLog.Web.AspNetCore
+2023-07-07 17:20:30.3580 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value 'DateAndSequence' for property 'archiveNumbering' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveNumbering not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-07 17:20:30.3883 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value '20000000' for property 'archiveAboveSize' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveAboveSize not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-07 17:20:30.4180 Info Adding target BlobStorageTarget(Name=azure)
+2023-07-07 17:20:30.4392 Info Adding target FileTarget(Name=allfile)
+2023-07-07 17:20:30.4531 Info Adding target FileTarget(Name=ownFile-web)
+2023-07-07 17:20:30.4679 Warn Skipping unrecognized property 'tolower=true` for ${level} (NLog.LayoutRenderers.LevelLayoutRenderer)
+2023-07-07 17:20:30.4679 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2023-07-07 17:20:30.4878 Info Adding target TraceTarget(Name=trace)
+2023-07-07 17:20:30.5506 Info Validating config: Targets=5, ConfigItems=104, FilePath=D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.config
+2023-07-07 17:20:30.6117 Error AzureBlobStorageTarget(Name=azure): Failed to create BlobClient with connectionString=. Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+2023-07-07 17:20:30.6352 Error AzureBlobStorage Target[azure]: Error initializing target Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)
+2023-07-07 17:20:30.6352 Info Configuration initialized.
+2023-07-07 17:20:30.6569 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2023-07-07 17:20:30.8594 Info AppDomain Shutting down. Logger closing...
+2023-07-07 17:20:30.8880 Info Logger has been shut down.
+2023-07-08 08:14:06.8461 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 08:14:06.8563 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 08:14:06.9127 Info NLog.Extensions.AzureBlobStorage, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null. File version: 3.0.0.0. Product version: 3.0.0+0f310734bbf0a754081db5fe3978a39d04fceecf. GlobalAssemblyCache: False
+2023-07-08 08:14:07.0681 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll succeeded!
+2023-07-08 08:14:07.0681 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 08:14:07.0833 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 08:14:07.1120 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.4.1610. Product version: 1.7.4+e2bffa9e949fb4760d75aca224e78631c063f087. GlobalAssemblyCache: False
+2023-07-08 08:14:07.1910 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll succeeded!
+2023-07-08 08:14:07.2009 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 08:14:07.2121 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 08:14:07.2482 Info NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.14.0.2042. Product version: 4.14.0+18bbcdbd5bd13b4565c32d72e09502b7ca6c71d4. GlobalAssemblyCache: False
+2023-07-08 08:14:07.2622 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll succeeded!
+2023-07-08 08:14:07.2762 Info Message Template Auto Format enabled
+2023-07-08 08:14:07.2914 Info Loading assembly: NLog.Extensions.AzureBlobStorage
+2023-07-08 08:14:07.3028 Info Loading assembly: NLog.Web.AspNetCore
+2023-07-08 08:14:07.3607 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value 'DateAndSequence' for property 'archiveNumbering' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveNumbering not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 08:14:07.5434 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value '20000000' for property 'archiveAboveSize' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveAboveSize not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 08:14:07.5786 Info Adding target BlobStorageTarget(Name=azure)
+2023-07-08 08:14:07.6015 Info Adding target FileTarget(Name=allfile)
+2023-07-08 08:14:07.6387 Info Adding target FileTarget(Name=ownFile-web)
+2023-07-08 08:14:07.6486 Warn Skipping unrecognized property 'tolower=true` for ${level} (NLog.LayoutRenderers.LevelLayoutRenderer)
+2023-07-08 08:14:07.6486 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2023-07-08 08:14:07.6669 Info Adding target TraceTarget(Name=trace)
+2023-07-08 08:14:07.7417 Info Validating config: Targets=5, ConfigItems=104, FilePath=D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.config
+2023-07-08 08:14:07.7881 Error AzureBlobStorageTarget(Name=azure): Failed to create BlobClient with connectionString=. Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+2023-07-08 08:14:07.8230 Error AzureBlobStorage Target[azure]: Error initializing target Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)
+2023-07-08 08:14:07.8464 Info Configuration initialized.
+2023-07-08 08:14:07.8616 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2023-07-08 08:14:07.9997 Info AppDomain Shutting down. Logger closing...
+2023-07-08 08:14:08.0411 Info Logger has been shut down.
+2023-07-08 08:19:06.7746 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 08:19:06.7913 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 08:19:06.8238 Info NLog.Extensions.AzureBlobStorage, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null. File version: 3.0.0.0. Product version: 3.0.0+0f310734bbf0a754081db5fe3978a39d04fceecf. GlobalAssemblyCache: False
+2023-07-08 08:19:06.8635 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll succeeded!
+2023-07-08 08:19:06.8744 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 08:19:06.8844 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 08:19:06.8999 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.4.1610. Product version: 1.7.4+e2bffa9e949fb4760d75aca224e78631c063f087. GlobalAssemblyCache: False
+2023-07-08 08:19:06.9239 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll succeeded!
+2023-07-08 08:19:06.9353 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 08:19:06.9473 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 08:19:06.9614 Info NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.14.0.2042. Product version: 4.14.0+18bbcdbd5bd13b4565c32d72e09502b7ca6c71d4. GlobalAssemblyCache: False
+2023-07-08 08:19:06.9614 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll succeeded!
+2023-07-08 08:19:06.9854 Info Message Template Auto Format enabled
+2023-07-08 08:19:06.9979 Info Loading assembly: NLog.Extensions.AzureBlobStorage
+2023-07-08 08:19:07.0085 Info Loading assembly: NLog.Web.AspNetCore
+2023-07-08 08:19:07.0660 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value 'DateAndSequence' for property 'archiveNumbering' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveNumbering not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 08:19:07.1294 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value '20000000' for property 'archiveAboveSize' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveAboveSize not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 08:19:07.1650 Info Adding target BlobStorageTarget(Name=azure)
+2023-07-08 08:19:07.1891 Info Adding target FileTarget(Name=allfile)
+2023-07-08 08:19:07.2170 Info Adding target FileTarget(Name=ownFile-web)
+2023-07-08 08:19:07.2272 Warn Skipping unrecognized property 'tolower=true` for ${level} (NLog.LayoutRenderers.LevelLayoutRenderer)
+2023-07-08 08:19:07.2272 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2023-07-08 08:19:07.2466 Info Adding target TraceTarget(Name=trace)
+2023-07-08 08:19:07.2970 Info Validating config: Targets=5, ConfigItems=104, FilePath=D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.config
+2023-07-08 08:19:07.3387 Error AzureBlobStorageTarget(Name=azure): Failed to create BlobClient with connectionString=. Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+2023-07-08 08:19:07.3594 Error AzureBlobStorage Target[azure]: Error initializing target Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)
+2023-07-08 08:19:07.3713 Info Configuration initialized.
+2023-07-08 08:19:07.3807 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2023-07-08 08:19:07.6330 Info AppDomain Shutting down. Logger closing...
+2023-07-08 08:19:07.6592 Info Logger has been shut down.
+2023-07-08 08:48:19.7690 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 08:48:19.7690 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 08:48:19.8284 Info NLog.Extensions.AzureBlobStorage, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null. File version: 3.0.0.0. Product version: 3.0.0+0f310734bbf0a754081db5fe3978a39d04fceecf. GlobalAssemblyCache: False
+2023-07-08 08:48:19.9539 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll succeeded!
+2023-07-08 08:48:19.9632 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 08:48:19.9707 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 08:48:19.9939 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.4.1610. Product version: 1.7.4+e2bffa9e949fb4760d75aca224e78631c063f087. GlobalAssemblyCache: False
+2023-07-08 08:48:20.0457 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll succeeded!
+2023-07-08 08:48:20.0550 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 08:48:20.0550 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 08:48:20.0948 Info NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.14.0.2042. Product version: 4.14.0+18bbcdbd5bd13b4565c32d72e09502b7ca6c71d4. GlobalAssemblyCache: False
+2023-07-08 08:48:20.1051 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll succeeded!
+2023-07-08 08:48:20.1142 Info Message Template Auto Format enabled
+2023-07-08 08:48:20.1142 Info Loading assembly: NLog.Extensions.AzureBlobStorage
+2023-07-08 08:48:20.1336 Info Loading assembly: NLog.Web.AspNetCore
+2023-07-08 08:48:20.1736 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value 'DateAndSequence' for property 'archiveNumbering' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveNumbering not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 08:48:20.3256 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value '20000000' for property 'archiveAboveSize' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveAboveSize not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 08:48:20.3568 Info Adding target BlobStorageTarget(Name=azure)
+2023-07-08 08:48:20.3708 Info Adding target FileTarget(Name=allfile)
+2023-07-08 08:48:20.4031 Info Adding target FileTarget(Name=ownFile-web)
+2023-07-08 08:48:20.4110 Warn Skipping unrecognized property 'tolower=true` for ${level} (NLog.LayoutRenderers.LevelLayoutRenderer)
+2023-07-08 08:48:20.4110 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2023-07-08 08:48:20.4271 Info Adding target TraceTarget(Name=trace)
+2023-07-08 08:48:20.4601 Info Validating config: Targets=5, ConfigItems=104, FilePath=D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.config
+2023-07-08 08:48:20.4821 Error AzureBlobStorageTarget(Name=azure): Failed to create BlobClient with connectionString=. Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+2023-07-08 08:48:20.4982 Error AzureBlobStorage Target[azure]: Error initializing target Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)
+2023-07-08 08:48:20.5100 Info Configuration initialized.
+2023-07-08 08:48:20.5190 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2023-07-08 08:48:20.7387 Info AppDomain Shutting down. Logger closing...
+2023-07-08 08:48:20.7632 Info Logger has been shut down.
+2023-07-08 08:57:57.9019 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 08:57:57.9218 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 08:57:57.9704 Info NLog.Extensions.AzureBlobStorage, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null. File version: 3.0.0.0. Product version: 3.0.0+0f310734bbf0a754081db5fe3978a39d04fceecf. GlobalAssemblyCache: False
+2023-07-08 08:57:58.0206 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll succeeded!
+2023-07-08 08:57:58.0206 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 08:57:58.0435 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 08:57:58.0631 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.4.1610. Product version: 1.7.4+e2bffa9e949fb4760d75aca224e78631c063f087. GlobalAssemblyCache: False
+2023-07-08 08:57:58.1074 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll succeeded!
+2023-07-08 08:57:58.1256 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 08:57:58.1496 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 08:57:58.1816 Info NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.14.0.2042. Product version: 4.14.0+18bbcdbd5bd13b4565c32d72e09502b7ca6c71d4. GlobalAssemblyCache: False
+2023-07-08 08:57:58.2000 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll succeeded!
+2023-07-08 08:57:58.2192 Info Message Template Auto Format enabled
+2023-07-08 08:57:58.2394 Info Loading assembly: NLog.Extensions.AzureBlobStorage
+2023-07-08 08:57:58.2394 Info Loading assembly: NLog.Web.AspNetCore
+2023-07-08 08:57:58.3047 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value 'DateAndSequence' for property 'archiveNumbering' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveNumbering not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 08:57:58.3738 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value '20000000' for property 'archiveAboveSize' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveAboveSize not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 08:57:58.4098 Info Adding target BlobStorageTarget(Name=azure)
+2023-07-08 08:57:58.4347 Info Adding target FileTarget(Name=allfile)
+2023-07-08 08:57:58.4503 Info Adding target FileTarget(Name=ownFile-web)
+2023-07-08 08:57:58.4705 Warn Skipping unrecognized property 'tolower=true` for ${level} (NLog.LayoutRenderers.LevelLayoutRenderer)
+2023-07-08 08:57:58.4705 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2023-07-08 08:57:58.4928 Info Adding target TraceTarget(Name=trace)
+2023-07-08 08:57:58.5471 Info Validating config: Targets=5, ConfigItems=104, FilePath=D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.config
+2023-07-08 08:57:58.5976 Error AzureBlobStorageTarget(Name=azure): Failed to create BlobClient with connectionString=. Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+2023-07-08 08:57:58.6310 Error AzureBlobStorage Target[azure]: Error initializing target Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)
+2023-07-08 08:57:58.6509 Info Configuration initialized.
+2023-07-08 08:57:58.6631 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2023-07-08 08:58:57.9742 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 08:58:58.0050 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 08:58:58.0444 Info NLog.Extensions.AzureBlobStorage, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null. File version: 3.0.0.0. Product version: 3.0.0+0f310734bbf0a754081db5fe3978a39d04fceecf. GlobalAssemblyCache: False
+2023-07-08 08:58:58.0757 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll succeeded!
+2023-07-08 08:58:58.0922 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 08:58:58.1079 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 08:58:58.1308 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.4.1610. Product version: 1.7.4+e2bffa9e949fb4760d75aca224e78631c063f087. GlobalAssemblyCache: False
+2023-07-08 08:58:58.1697 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll succeeded!
+2023-07-08 08:58:58.1897 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 08:58:58.2069 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 08:58:58.2262 Info NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.14.0.2042. Product version: 4.14.0+18bbcdbd5bd13b4565c32d72e09502b7ca6c71d4. GlobalAssemblyCache: False
+2023-07-08 08:58:58.2415 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll succeeded!
+2023-07-08 08:58:58.2650 Info Message Template Auto Format enabled
+2023-07-08 08:58:58.2881 Info Loading assembly: NLog.Extensions.AzureBlobStorage
+2023-07-08 08:58:58.2993 Info Loading assembly: NLog.Web.AspNetCore
+2023-07-08 08:58:58.3692 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value 'DateAndSequence' for property 'archiveNumbering' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveNumbering not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 08:58:58.4136 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value '20000000' for property 'archiveAboveSize' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveAboveSize not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 08:58:58.4613 Info Adding target BlobStorageTarget(Name=azure)
+2023-07-08 08:58:58.4868 Info Adding target FileTarget(Name=allfile)
+2023-07-08 08:58:58.5047 Info Adding target FileTarget(Name=ownFile-web)
+2023-07-08 08:58:58.5047 Warn Skipping unrecognized property 'tolower=true` for ${level} (NLog.LayoutRenderers.LevelLayoutRenderer)
+2023-07-08 08:58:58.5306 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2023-07-08 08:58:58.5471 Info Adding target TraceTarget(Name=trace)
+2023-07-08 08:58:58.6110 Info Validating config: Targets=5, ConfigItems=104, FilePath=D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.config
+2023-07-08 08:58:58.6610 Error AzureBlobStorageTarget(Name=azure): Failed to create BlobClient with connectionString=. Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+2023-07-08 08:58:58.6850 Error AzureBlobStorage Target[azure]: Error initializing target Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)
+2023-07-08 08:58:58.7007 Info Configuration initialized.
+2023-07-08 08:58:58.7154 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2023-07-08 09:02:28.7138 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 09:02:28.7291 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 09:02:28.8773 Info NLog.Extensions.AzureBlobStorage, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null. File version: 3.0.0.0. Product version: 3.0.0+0f310734bbf0a754081db5fe3978a39d04fceecf. GlobalAssemblyCache: False
+2023-07-08 09:02:29.0625 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll succeeded!
+2023-07-08 09:02:29.0887 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 09:02:29.1097 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 09:02:29.1814 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.4.1610. Product version: 1.7.4+e2bffa9e949fb4760d75aca224e78631c063f087. GlobalAssemblyCache: False
+2023-07-08 09:02:29.2577 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll succeeded!
+2023-07-08 09:02:29.2731 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 09:02:29.2858 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 09:02:29.3195 Info NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.14.0.2042. Product version: 4.14.0+18bbcdbd5bd13b4565c32d72e09502b7ca6c71d4. GlobalAssemblyCache: False
+2023-07-08 09:02:29.3398 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll succeeded!
+2023-07-08 09:02:29.3638 Info Message Template Auto Format enabled
+2023-07-08 09:02:29.3835 Info Loading assembly: NLog.Extensions.AzureBlobStorage
+2023-07-08 09:02:29.3941 Info Loading assembly: NLog.Web.AspNetCore
+2023-07-08 09:02:29.4535 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value 'DateAndSequence' for property 'archiveNumbering' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveNumbering not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 09:02:29.6355 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value '20000000' for property 'archiveAboveSize' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveAboveSize not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 09:02:29.6717 Info Adding target BlobStorageTarget(Name=azure)
+2023-07-08 09:02:29.7075 Info Adding target FileTarget(Name=allfile)
+2023-07-08 09:02:29.7217 Info Adding target FileTarget(Name=ownFile-web)
+2023-07-08 09:02:29.7451 Warn Skipping unrecognized property 'tolower=true` for ${level} (NLog.LayoutRenderers.LevelLayoutRenderer)
+2023-07-08 09:02:29.7649 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2023-07-08 09:02:29.7810 Info Adding target TraceTarget(Name=trace)
+2023-07-08 09:02:29.8543 Info Validating config: Targets=5, ConfigItems=104, FilePath=D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.config
+2023-07-08 09:02:29.9259 Error AzureBlobStorageTarget(Name=azure): Failed to create BlobClient with connectionString=. Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+2023-07-08 09:02:29.9750 Error AzureBlobStorage Target[azure]: Error initializing target Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)
+2023-07-08 09:02:29.9926 Info Configuration initialized.
+2023-07-08 09:02:30.0039 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2023-07-08 09:02:30.3390 Info AppDomain Shutting down. Logger closing...
+2023-07-08 09:02:30.3824 Info Logger has been shut down.
+2023-07-08 09:04:15.8950 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 09:04:15.9129 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 09:04:15.9376 Info NLog.Extensions.AzureBlobStorage, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null. File version: 3.0.0.0. Product version: 3.0.0+0f310734bbf0a754081db5fe3978a39d04fceecf. GlobalAssemblyCache: False
+2023-07-08 09:04:15.9753 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll succeeded!
+2023-07-08 09:04:15.9851 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 09:04:15.9851 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 09:04:16.0120 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.4.1610. Product version: 1.7.4+e2bffa9e949fb4760d75aca224e78631c063f087. GlobalAssemblyCache: False
+2023-07-08 09:04:16.0367 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll succeeded!
+2023-07-08 09:04:16.0492 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 09:04:16.0673 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 09:04:16.0827 Info NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.14.0.2042. Product version: 4.14.0+18bbcdbd5bd13b4565c32d72e09502b7ca6c71d4. GlobalAssemblyCache: False
+2023-07-08 09:04:16.0962 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll succeeded!
+2023-07-08 09:04:16.1142 Info Message Template Auto Format enabled
+2023-07-08 09:04:16.1376 Info Loading assembly: NLog.Extensions.AzureBlobStorage
+2023-07-08 09:04:16.1535 Info Loading assembly: NLog.Web.AspNetCore
+2023-07-08 09:04:16.2054 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value 'DateAndSequence' for property 'archiveNumbering' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveNumbering not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 09:04:16.2495 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value '20000000' for property 'archiveAboveSize' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveAboveSize not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 09:04:16.2854 Info Adding target BlobStorageTarget(Name=azure)
+2023-07-08 09:04:16.3326 Info Adding target FileTarget(Name=allfile)
+2023-07-08 09:04:16.3499 Info Adding target FileTarget(Name=ownFile-web)
+2023-07-08 09:04:16.3678 Warn Skipping unrecognized property 'tolower=true` for ${level} (NLog.LayoutRenderers.LevelLayoutRenderer)
+2023-07-08 09:04:16.3807 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2023-07-08 09:04:16.3951 Info Adding target TraceTarget(Name=trace)
+2023-07-08 09:04:16.4634 Info Validating config: Targets=5, ConfigItems=104, FilePath=D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.config
+2023-07-08 09:04:16.5041 Error AzureBlobStorageTarget(Name=azure): Failed to create BlobClient with connectionString=. Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+2023-07-08 09:04:16.5389 Error AzureBlobStorage Target[azure]: Error initializing target Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)
+2023-07-08 09:04:16.5528 Info Configuration initialized.
+2023-07-08 09:04:16.5643 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2023-07-08 09:04:16.8276 Info AppDomain Shutting down. Logger closing...
+2023-07-08 09:04:16.8567 Info Logger has been shut down.
+2023-07-08 09:06:35.9138 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 09:06:35.9317 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 09:06:35.9706 Info NLog.Extensions.AzureBlobStorage, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null. File version: 3.0.0.0. Product version: 3.0.0+0f310734bbf0a754081db5fe3978a39d04fceecf. GlobalAssemblyCache: False
+2023-07-08 09:06:36.0144 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll succeeded!
+2023-07-08 09:06:36.0239 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 09:06:36.0239 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 09:06:36.0536 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.4.1610. Product version: 1.7.4+e2bffa9e949fb4760d75aca224e78631c063f087. GlobalAssemblyCache: False
+2023-07-08 09:06:36.0774 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll succeeded!
+2023-07-08 09:06:36.0877 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 09:06:36.0877 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 09:06:36.1254 Info NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.14.0.2042. Product version: 4.14.0+18bbcdbd5bd13b4565c32d72e09502b7ca6c71d4. GlobalAssemblyCache: False
+2023-07-08 09:06:36.1422 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll succeeded!
+2023-07-08 09:06:36.1601 Info Message Template Auto Format enabled
+2023-07-08 09:06:36.1750 Info Loading assembly: NLog.Extensions.AzureBlobStorage
+2023-07-08 09:06:36.1867 Info Loading assembly: NLog.Web.AspNetCore
+2023-07-08 09:06:36.2589 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value 'DateAndSequence' for property 'archiveNumbering' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveNumbering not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 09:06:36.3747 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value '20000000' for property 'archiveAboveSize' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveAboveSize not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 09:06:36.4094 Info Adding target BlobStorageTarget(Name=azure)
+2023-07-08 09:06:36.4482 Info Adding target FileTarget(Name=allfile)
+2023-07-08 09:06:36.4669 Info Adding target FileTarget(Name=ownFile-web)
+2023-07-08 09:06:36.4868 Warn Skipping unrecognized property 'tolower=true` for ${level} (NLog.LayoutRenderers.LevelLayoutRenderer)
+2023-07-08 09:06:36.5006 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2023-07-08 09:06:36.5186 Info Adding target TraceTarget(Name=trace)
+2023-07-08 09:06:36.6050 Info Validating config: Targets=5, ConfigItems=104, FilePath=D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.config
+2023-07-08 09:06:36.6492 Error AzureBlobStorageTarget(Name=azure): Failed to create BlobClient with connectionString=. Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+2023-07-08 09:06:36.6774 Error AzureBlobStorage Target[azure]: Error initializing target Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)
+2023-07-08 09:06:36.6929 Info Configuration initialized.
+2023-07-08 09:06:36.7055 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2023-07-08 09:06:37.1198 Info AppDomain Shutting down. Logger closing...
+2023-07-08 09:06:37.1615 Info Logger has been shut down.
+2023-07-08 09:08:35.2753 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 09:08:35.2888 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 09:08:35.3289 Info NLog.Extensions.AzureBlobStorage, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null. File version: 3.0.0.0. Product version: 3.0.0+0f310734bbf0a754081db5fe3978a39d04fceecf. GlobalAssemblyCache: False
+2023-07-08 09:08:35.3602 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll succeeded!
+2023-07-08 09:08:35.3748 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 09:08:35.3846 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 09:08:35.4138 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.4.1610. Product version: 1.7.4+e2bffa9e949fb4760d75aca224e78631c063f087. GlobalAssemblyCache: False
+2023-07-08 09:08:35.4485 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll succeeded!
+2023-07-08 09:08:35.4639 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 09:08:35.4848 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 09:08:35.5088 Info NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.14.0.2042. Product version: 4.14.0+18bbcdbd5bd13b4565c32d72e09502b7ca6c71d4. GlobalAssemblyCache: False
+2023-07-08 09:08:35.5255 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll succeeded!
+2023-07-08 09:08:35.5539 Info Message Template Auto Format enabled
+2023-07-08 09:08:35.5764 Info Loading assembly: NLog.Extensions.AzureBlobStorage
+2023-07-08 09:08:35.5926 Info Loading assembly: NLog.Web.AspNetCore
+2023-07-08 09:08:35.6530 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value 'DateAndSequence' for property 'archiveNumbering' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveNumbering not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 09:08:35.7011 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value '20000000' for property 'archiveAboveSize' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveAboveSize not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 09:08:35.7457 Info Adding target BlobStorageTarget(Name=azure)
+2023-07-08 09:08:35.7691 Info Adding target FileTarget(Name=allfile)
+2023-07-08 09:08:35.7858 Info Adding target FileTarget(Name=ownFile-web)
+2023-07-08 09:08:35.7858 Warn Skipping unrecognized property 'tolower=true` for ${level} (NLog.LayoutRenderers.LevelLayoutRenderer)
+2023-07-08 09:08:35.8178 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2023-07-08 09:08:35.8178 Info Adding target TraceTarget(Name=trace)
+2023-07-08 09:08:35.8858 Info Validating config: Targets=5, ConfigItems=104, FilePath=D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.config
+2023-07-08 09:08:35.9333 Error AzureBlobStorageTarget(Name=azure): Failed to create BlobClient with connectionString=. Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+2023-07-08 09:08:35.9835 Error AzureBlobStorage Target[azure]: Error initializing target Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)
+2023-07-08 09:08:36.0007 Info Configuration initialized.
+2023-07-08 09:08:36.0111 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2023-07-08 09:08:36.3107 Info AppDomain Shutting down. Logger closing...
+2023-07-08 09:08:36.3535 Info Logger has been shut down.
+2023-07-08 09:33:32.6462 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 09:33:32.6621 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 09:33:32.6956 Info NLog.Extensions.AzureBlobStorage, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null. File version: 3.0.0.0. Product version: 3.0.0+0f310734bbf0a754081db5fe3978a39d04fceecf. GlobalAssemblyCache: False
+2023-07-08 09:33:32.7673 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll succeeded!
+2023-07-08 09:33:32.7673 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 09:33:32.7907 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 09:33:32.8251 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.4.1610. Product version: 1.7.4+e2bffa9e949fb4760d75aca224e78631c063f087. GlobalAssemblyCache: False
+2023-07-08 09:33:32.8716 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll succeeded!
+2023-07-08 09:33:32.8825 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 09:33:32.9085 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 09:33:32.9483 Info NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.14.0.2042. Product version: 4.14.0+18bbcdbd5bd13b4565c32d72e09502b7ca6c71d4. GlobalAssemblyCache: False
+2023-07-08 09:33:32.9827 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll succeeded!
+2023-07-08 09:33:33.0670 Info Message Template Auto Format enabled
+2023-07-08 09:33:33.2128 Info Loading assembly: NLog.Extensions.AzureBlobStorage
+2023-07-08 09:33:33.2564 Info Loading assembly: NLog.Web.AspNetCore
+2023-07-08 09:33:33.3489 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value 'DateAndSequence' for property 'archiveNumbering' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveNumbering not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 09:33:33.5018 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value '20000000' for property 'archiveAboveSize' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveAboveSize not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 09:33:33.5396 Info Adding target BlobStorageTarget(Name=azure)
+2023-07-08 09:33:33.5671 Info Adding target FileTarget(Name=allfile)
+2023-07-08 09:33:33.5906 Info Adding target FileTarget(Name=ownFile-web)
+2023-07-08 09:33:33.6042 Warn Skipping unrecognized property 'tolower=true` for ${level} (NLog.LayoutRenderers.LevelLayoutRenderer)
+2023-07-08 09:33:33.6490 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2023-07-08 09:33:33.6688 Info Adding target TraceTarget(Name=trace)
+2023-07-08 09:33:33.7471 Info Validating config: Targets=5, ConfigItems=104, FilePath=D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.config
+2023-07-08 09:33:33.8313 Error AzureBlobStorageTarget(Name=azure): Failed to create BlobClient with connectionString=. Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+2023-07-08 09:33:33.8608 Error AzureBlobStorage Target[azure]: Error initializing target Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)
+2023-07-08 09:33:33.8840 Info Configuration initialized.
+2023-07-08 09:33:33.9032 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2023-07-08 09:33:34.3601 Info AppDomain Shutting down. Logger closing...
+2023-07-08 09:33:34.4045 Info Logger has been shut down.
+2023-07-08 09:40:08.7491 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 09:40:08.7616 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 09:40:08.8019 Info NLog.Extensions.AzureBlobStorage, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null. File version: 3.0.0.0. Product version: 3.0.0+0f310734bbf0a754081db5fe3978a39d04fceecf. GlobalAssemblyCache: False
+2023-07-08 09:40:08.8420 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll succeeded!
+2023-07-08 09:40:08.8607 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 09:40:08.8733 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 09:40:08.8858 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.4.1610. Product version: 1.7.4+e2bffa9e949fb4760d75aca224e78631c063f087. GlobalAssemblyCache: False
+2023-07-08 09:40:08.9170 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll succeeded!
+2023-07-08 09:40:08.9319 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 09:40:08.9469 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 09:40:08.9722 Info NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.14.0.2042. Product version: 4.14.0+18bbcdbd5bd13b4565c32d72e09502b7ca6c71d4. GlobalAssemblyCache: False
+2023-07-08 09:40:08.9886 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll succeeded!
+2023-07-08 09:40:09.0052 Info Message Template Auto Format enabled
+2023-07-08 09:40:09.0424 Info Loading assembly: NLog.Extensions.AzureBlobStorage
+2023-07-08 09:40:09.0584 Info Loading assembly: NLog.Web.AspNetCore
+2023-07-08 09:40:09.1686 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value 'DateAndSequence' for property 'archiveNumbering' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveNumbering not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 09:40:09.2400 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value '20000000' for property 'archiveAboveSize' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveAboveSize not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 09:40:09.3025 Info Adding target BlobStorageTarget(Name=azure)
+2023-07-08 09:40:09.3631 Info Adding target FileTarget(Name=allfile)
+2023-07-08 09:40:09.3792 Info Adding target FileTarget(Name=ownFile-web)
+2023-07-08 09:40:09.3999 Warn Skipping unrecognized property 'tolower=true` for ${level} (NLog.LayoutRenderers.LevelLayoutRenderer)
+2023-07-08 09:40:09.4169 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2023-07-08 09:40:09.4346 Info Adding target TraceTarget(Name=trace)
+2023-07-08 09:40:09.5812 Info Validating config: Targets=5, ConfigItems=104, FilePath=D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.config
+2023-07-08 09:40:09.6693 Error AzureBlobStorageTarget(Name=azure): Failed to create BlobClient with connectionString=. Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+2023-07-08 09:40:09.7327 Error AzureBlobStorage Target[azure]: Error initializing target Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)
+2023-07-08 09:40:09.8022 Info Configuration initialized.
+2023-07-08 09:40:09.8289 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2023-07-08 09:40:10.1572 Info AppDomain Shutting down. Logger closing...
+2023-07-08 09:40:10.2207 Info Logger has been shut down.
+2023-07-08 09:40:29.2044 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 09:40:29.2162 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 09:40:29.2471 Info NLog.Extensions.AzureBlobStorage, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null. File version: 3.0.0.0. Product version: 3.0.0+0f310734bbf0a754081db5fe3978a39d04fceecf. GlobalAssemblyCache: False
+2023-07-08 09:40:29.2828 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll succeeded!
+2023-07-08 09:40:29.2973 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 09:40:29.3108 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 09:40:29.3313 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.4.1610. Product version: 1.7.4+e2bffa9e949fb4760d75aca224e78631c063f087. GlobalAssemblyCache: False
+2023-07-08 09:40:29.3529 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll succeeded!
+2023-07-08 09:40:29.3632 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 09:40:29.3632 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 09:40:29.3941 Info NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.14.0.2042. Product version: 4.14.0+18bbcdbd5bd13b4565c32d72e09502b7ca6c71d4. GlobalAssemblyCache: False
+2023-07-08 09:40:29.4081 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll succeeded!
+2023-07-08 09:40:29.4081 Info Message Template Auto Format enabled
+2023-07-08 09:40:29.4434 Info Loading assembly: NLog.Extensions.AzureBlobStorage
+2023-07-08 09:40:29.4561 Info Loading assembly: NLog.Web.AspNetCore
+2023-07-08 09:40:29.5124 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value 'DateAndSequence' for property 'archiveNumbering' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveNumbering not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 09:40:29.5722 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value '20000000' for property 'archiveAboveSize' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveAboveSize not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 09:40:29.6207 Info Adding target BlobStorageTarget(Name=azure)
+2023-07-08 09:40:29.6581 Info Adding target FileTarget(Name=allfile)
+2023-07-08 09:40:29.6736 Info Adding target FileTarget(Name=ownFile-web)
+2023-07-08 09:40:29.6736 Warn Skipping unrecognized property 'tolower=true` for ${level} (NLog.LayoutRenderers.LevelLayoutRenderer)
+2023-07-08 09:40:29.6998 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2023-07-08 09:40:29.7170 Info Adding target TraceTarget(Name=trace)
+2023-07-08 09:40:29.7736 Info Validating config: Targets=5, ConfigItems=104, FilePath=D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.config
+2023-07-08 09:40:29.8170 Error AzureBlobStorageTarget(Name=azure): Failed to create BlobClient with connectionString=. Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+2023-07-08 09:40:29.8445 Error AzureBlobStorage Target[azure]: Error initializing target Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)
+2023-07-08 09:40:29.8600 Info Configuration initialized.
+2023-07-08 09:40:29.8721 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2023-07-08 09:40:30.1384 Info AppDomain Shutting down. Logger closing...
+2023-07-08 09:40:30.1764 Info Logger has been shut down.
+2023-07-08 09:42:28.9601 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 09:42:28.9918 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-08 09:42:29.0742 Info NLog.Extensions.AzureBlobStorage, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null. File version: 3.0.0.0. Product version: 3.0.0+0f310734bbf0a754081db5fe3978a39d04fceecf. GlobalAssemblyCache: False
+2023-07-08 09:42:29.2941 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll succeeded!
+2023-07-08 09:42:29.3133 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 09:42:29.3328 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-08 09:42:29.3499 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.4.1610. Product version: 1.7.4+e2bffa9e949fb4760d75aca224e78631c063f087. GlobalAssemblyCache: False
+2023-07-08 09:42:29.3836 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll succeeded!
+2023-07-08 09:42:29.3998 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 09:42:29.4383 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-08 09:42:29.4574 Info NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.14.0.2042. Product version: 4.14.0+18bbcdbd5bd13b4565c32d72e09502b7ca6c71d4. GlobalAssemblyCache: False
+2023-07-08 09:42:29.4756 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll succeeded!
+2023-07-08 09:42:29.5025 Info Message Template Auto Format enabled
+2023-07-08 09:42:29.5373 Info Loading assembly: NLog.Extensions.AzureBlobStorage
+2023-07-08 09:42:29.5602 Info Loading assembly: NLog.Web.AspNetCore
+2023-07-08 09:42:29.7085 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value 'DateAndSequence' for property 'archiveNumbering' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveNumbering not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 09:42:29.8358 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value '20000000' for property 'archiveAboveSize' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveAboveSize not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-08 09:42:29.8747 Info Adding target BlobStorageTarget(Name=azure)
+2023-07-08 09:42:29.9334 Info Adding target FileTarget(Name=allfile)
+2023-07-08 09:42:29.9681 Info Adding target FileTarget(Name=ownFile-web)
+2023-07-08 09:42:29.9839 Warn Skipping unrecognized property 'tolower=true` for ${level} (NLog.LayoutRenderers.LevelLayoutRenderer)
+2023-07-08 09:42:29.9972 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2023-07-08 09:42:30.0109 Info Adding target TraceTarget(Name=trace)
+2023-07-08 09:42:30.0722 Info Validating config: Targets=5, ConfigItems=104, FilePath=D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.config
+2023-07-08 09:42:30.1627 Error AzureBlobStorageTarget(Name=azure): Failed to create BlobClient with connectionString=. Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+2023-07-08 09:42:30.2056 Error AzureBlobStorage Target[azure]: Error initializing target Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)
+2023-07-08 09:42:30.2456 Info Configuration initialized.
+2023-07-08 09:42:30.2655 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2023-07-08 09:42:30.5177 Info AppDomain Shutting down. Logger closing...
+2023-07-08 09:42:30.5581 Info Logger has been shut down.
+2023-07-10 13:04:24.6145 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-10 13:04:24.6444 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-10 13:04:24.8229 Info NLog.Extensions.AzureBlobStorage, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null. File version: 3.0.0.0. Product version: 3.0.0+0f310734bbf0a754081db5fe3978a39d04fceecf. GlobalAssemblyCache: False
+2023-07-10 13:04:25.2241 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll succeeded!
+2023-07-10 13:04:25.2453 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-10 13:04:25.2791 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-10 13:04:25.4265 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.4.1610. Product version: 1.7.4+e2bffa9e949fb4760d75aca224e78631c063f087. GlobalAssemblyCache: False
+2023-07-10 13:04:25.5470 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll succeeded!
+2023-07-10 13:04:25.5728 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-10 13:04:25.5966 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-10 13:04:25.6701 Info NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.14.0.2042. Product version: 4.14.0+18bbcdbd5bd13b4565c32d72e09502b7ca6c71d4. GlobalAssemblyCache: False
+2023-07-10 13:04:25.6991 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll succeeded!
+2023-07-10 13:04:25.7231 Info Message Template Auto Format enabled
+2023-07-10 13:04:25.7541 Info Loading assembly: NLog.Extensions.AzureBlobStorage
+2023-07-10 13:04:25.8013 Info Loading assembly: NLog.Web.AspNetCore
+2023-07-10 13:04:25.9082 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value 'DateAndSequence' for property 'archiveNumbering' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveNumbering not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-10 13:04:26.1892 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value '20000000' for property 'archiveAboveSize' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveAboveSize not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-10 13:04:26.2942 Info Adding target BlobStorageTarget(Name=azure)
+2023-07-10 13:04:26.3420 Info Adding target FileTarget(Name=allfile)
+2023-07-10 13:04:26.3715 Info Adding target FileTarget(Name=ownFile-web)
+2023-07-10 13:04:26.3928 Warn Skipping unrecognized property 'tolower=true` for ${level} (NLog.LayoutRenderers.LevelLayoutRenderer)
+2023-07-10 13:04:26.4129 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2023-07-10 13:04:26.4299 Info Adding target TraceTarget(Name=trace)
+2023-07-10 13:04:26.5043 Info Validating config: Targets=5, ConfigItems=104, FilePath=D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.config
+2023-07-10 13:04:26.5603 Error AzureBlobStorageTarget(Name=azure): Failed to create BlobClient with connectionString=. Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+2023-07-10 13:04:26.5976 Error AzureBlobStorage Target[azure]: Error initializing target Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)
+2023-07-10 13:04:26.6312 Info Configuration initialized.
+2023-07-10 13:04:26.6594 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2023-07-10 13:04:27.1053 Info AppDomain Shutting down. Logger closing...
+2023-07-10 13:04:27.1787 Info Logger has been shut down.
+2023-07-10 13:04:52.7101 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-10 13:04:52.7389 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll
+2023-07-10 13:04:52.7822 Info NLog.Extensions.AzureBlobStorage, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null. File version: 3.0.0.0. Product version: 3.0.0+0f310734bbf0a754081db5fe3978a39d04fceecf. GlobalAssemblyCache: False
+2023-07-10 13:04:52.8300 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.AzureBlobStorage.dll succeeded!
+2023-07-10 13:04:52.8490 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-10 13:04:52.8679 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2023-07-10 13:04:52.8976 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.4.1610. Product version: 1.7.4+e2bffa9e949fb4760d75aca224e78631c063f087. GlobalAssemblyCache: False
+2023-07-10 13:04:52.9300 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll succeeded!
+2023-07-10 13:04:52.9531 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-10 13:04:52.9794 Info Loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2023-07-10 13:04:53.0107 Info NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.14.0.2042. Product version: 4.14.0+18bbcdbd5bd13b4565c32d72e09502b7ca6c71d4. GlobalAssemblyCache: False
+2023-07-10 13:04:53.0432 Info Auto loading assembly file: D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll succeeded!
+2023-07-10 13:04:53.0711 Info Message Template Auto Format enabled
+2023-07-10 13:04:53.1041 Info Loading assembly: NLog.Extensions.AzureBlobStorage
+2023-07-10 13:04:53.1288 Info Loading assembly: NLog.Web.AspNetCore
+2023-07-10 13:04:53.2333 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value 'DateAndSequence' for property 'archiveNumbering' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveNumbering not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-10 13:04:53.2977 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error when setting value '20000000' for property 'archiveAboveSize' on element 'NLog.Config.NLogXmlElement'
+ ---> System.NotSupportedException: Parameter archiveAboveSize not supported on BlobStorageTarget
+   at NLog.Internal.PropertyHelper.SetPropertyFromString(Object obj, String propertyName, String value, ConfigurationItemFactory configurationItemFactory)
+   at NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes(Object targetObject, ILoggingConfigurationElement element, Boolean ignoreType)
+   --- End of inner exception stack trace ---
+2023-07-10 13:04:53.3689 Info Adding target BlobStorageTarget(Name=azure)
+2023-07-10 13:04:53.4189 Info Adding target FileTarget(Name=allfile)
+2023-07-10 13:04:53.4517 Info Adding target FileTarget(Name=ownFile-web)
+2023-07-10 13:04:53.4796 Warn Skipping unrecognized property 'tolower=true` for ${level} (NLog.LayoutRenderers.LevelLayoutRenderer)
+2023-07-10 13:04:53.5043 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2023-07-10 13:04:53.5276 Info Adding target TraceTarget(Name=trace)
+2023-07-10 13:04:53.5932 Info Validating config: Targets=5, ConfigItems=104, FilePath=D:\GitLab-DevOps\SOM\SOM-api\som-api\MyFirstAzureWebAppTest\bin\Debug\net6.0\NLog.config
+2023-07-10 13:04:53.6735 Error AzureBlobStorageTarget(Name=azure): Failed to create BlobClient with connectionString=. Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+2023-07-10 13:04:53.7086 Error AzureBlobStorage Target[azure]: Error initializing target Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at Azure.Storage.StorageConnectionString.Parse(String connectionString)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString, BlobClientOptions options)
+   at Azure.Storage.Blobs.BlobServiceClient..ctor(String connectionString)
+   at NLog.Targets.BlobStorageTarget.CloudBlobService.Connect(String connectionString, String serviceUri, String tenantIdentity, String resourceIdentity, IDictionary`2 blobMetadata, IDictionary`2 blobTags)
+   at NLog.Targets.BlobStorageTarget.InitializeTarget()
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)
+2023-07-10 13:04:53.7370 Info Configuration initialized.
+2023-07-10 13:04:53.7671 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2023-07-10 13:04:54.0338 Info AppDomain Shutting down. Logger closing...
+2023-07-10 13:04:54.0919 Info Logger has been shut down.
